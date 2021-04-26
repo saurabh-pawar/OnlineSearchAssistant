@@ -3,6 +3,7 @@ using Moq;
 using OnlineSearchAssistant.Application;
 using OnlineSearchAssistant.Controllers;
 using OnlineSearchAssistant.Domain;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using Xunit;
 
@@ -18,6 +19,7 @@ namespace OnlineSearchAssistant.Tests.UnitTests.Controllers
             var searchAssistantMock = new Mock<ISearchAssistant>();
 
             inputSanitizerMock.Setup(m => m.IsAbsoluteUrl(It.IsAny<string>())).Returns(true);
+            searchAssistantMock.Setup(m => m.GetPageRanks(It.IsAny<string>(), It.IsAny<string>(), 50, SearchEngines.GOOGLE)).ReturnsAsync(new List<int>());
 
             var sut = new PageRanksController(searchAssistantMock.Object, inputSanitizerMock.Object);
 
@@ -46,6 +48,7 @@ namespace OnlineSearchAssistant.Tests.UnitTests.Controllers
             var searchAssistantMock = new Mock<ISearchAssistant>();
 
             inputSanitizerMock.Setup(m => m.IsAbsoluteUrl(It.IsAny<string>())).Returns(true);
+            searchAssistantMock.Setup(m => m.GetPageRanks(It.IsAny<string>(), It.IsAny<string>(), 50, SearchEngines.BING)).ReturnsAsync(new List<int>());
 
             var sut = new PageRanksController(searchAssistantMock.Object, inputSanitizerMock.Object);
 

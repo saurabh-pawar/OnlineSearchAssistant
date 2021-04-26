@@ -5,7 +5,7 @@ export class PageRanks extends Component {
 
     constructor(props) {
         super(props);
-        this.state = { searchString: "", urlToCheck: "", searchEngine: "", pageRanks: [0], errorMessage: "", loading: false };
+        this.state = { searchString: "", urlToCheck: "", searchEngine: "Google", pageRanks: [0], errorMessage: "", loading: false };
         this.populateGooglePageRanks = this.populateGooglePageRanks.bind(this);
         this.populateBingPageRanks = this.populateBingPageRanks.bind(this);
     }
@@ -15,9 +15,13 @@ export class PageRanks extends Component {
             const response = await fetch(`pageranks/${searchEngine}?searchString=${this.state.searchString}&urlToCheck=${this.state.urlToCheck}`);
             if (response.ok) {
                 const data = await response.json();
-                this.setState({ pageRanks: data, searchEngine: searchEngine, loading: false });
+                this.setState({ pageRanks: data, searchEngine: searchEngine, errorMessage: "", loading: false });
             } else {
-                this.setState({ pageRanks: [0], searchEngine: searchEngine, errorMessage: `Error code : ${response.status}`, loading: false });
+                switch (response.status) {
+                    case 400:
+                        this.setState({ pageRanks: [0], searchEngine: searchEngine, errorMessage: `Bad Request. Please provide a valid search string and a valid url to check.`, loading: false });
+                    break;
+				}
             }
         }
         catch (err) {
@@ -57,7 +61,7 @@ export class PageRanks extends Component {
                 <div className="row">
                     {
                         loading
-                            ? <p><em>Loading...</em></p>
+                            ? <p className><em>Loading...</em></p>
                             : <div className="my-3">Current Page Ranks on <strong>{searchEngine}</strong> are - <strong>{pageRanks.toString()}</strong></div>
                     }
                 </div>

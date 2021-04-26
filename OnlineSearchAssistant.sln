@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30002.166
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OnlineSearchAssistant", "OnlineSearchAssistant\OnlineSearchAssistant.csproj", "{F5907B39-F514-437D-BCA8-4BBE757D581E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OnlineSearchAssistant.Tests", "OnlineSearchAssistant.Tests\OnlineSearchAssistant.Tests.csproj", "{235D06FD-0EB2-4A2D-AD55-D88FDC6710BB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{14FE122A-4B20-4D69-A462-4EB8EAF96310}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+		README.md = README.md
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F5907B39-F514-437D-BCA8-4BBE757D581E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F5907B39-F514-437D-BCA8-4BBE757D581E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F5907B39-F514-437D-BCA8-4BBE757D581E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F5907B39-F514-437D-BCA8-4BBE757D581E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{235D06FD-0EB2-4A2D-AD55-D88FDC6710BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{235D06FD-0EB2-4A2D-AD55-D88FDC6710BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{235D06FD-0EB2-4A2D-AD55-D88FDC6710BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{235D06FD-0EB2-4A2D-AD55-D88FDC6710BB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8B20C6A9-BD4B-4D53-88A7-FD63165D8A69}
+	EndGlobalSection
+EndGlobal

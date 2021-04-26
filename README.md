@@ -13,5 +13,6 @@
 
 ## To run this project - 
 1. Clone it to your desktop
-2. Start in IISExpress
-3. The app should start at - https://localhost:44373/
+2. Open OnlineSearchAssistant solution in Visual Studio
+2. Start using IISExpress
+3. The app should run at - https://localhost:44373/

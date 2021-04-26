@@ -26,7 +26,7 @@ namespace OnlineSearchAssistant.Controllers
         [Route("Google")]
         public async Task<ActionResult<List<int>>> Google(string searchString, string urlToCheck)
         {
-            if (!inputSanitizer.IsUrl(urlToCheck))
+            if (!inputSanitizer.IsAbsoluteUrl(urlToCheck))
             {
                 return BadRequest("Please provide a valid url to check");
             }
@@ -42,7 +42,7 @@ namespace OnlineSearchAssistant.Controllers
         [Route("Bing")]
         public async Task<ActionResult<List<int>>> Bing(string searchString, string urlToCheck)
         {
-            if (!inputSanitizer.IsUrl(urlToCheck))
+            if (!inputSanitizer.IsAbsoluteUrl(urlToCheck))
             {
                 return BadRequest("Please provide a valid url to check");
             }

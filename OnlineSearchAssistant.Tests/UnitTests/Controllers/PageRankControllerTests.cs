@@ -17,7 +17,7 @@ namespace OnlineSearchAssistant.Tests.UnitTests.Controllers
             var inputSanitizerMock = new Mock<IInputSanitizer>();
             var searchAssistantMock = new Mock<ISearchAssistant>();
 
-            inputSanitizerMock.Setup(m => m.IsUrl(It.IsAny<string>())).Returns(true);
+            inputSanitizerMock.Setup(m => m.IsAbsoluteUrl(It.IsAny<string>())).Returns(true);
 
             var sut = new PageRanksController(searchAssistantMock.Object, inputSanitizerMock.Object);
 
@@ -32,7 +32,7 @@ namespace OnlineSearchAssistant.Tests.UnitTests.Controllers
             var inputSanitizerMock = new Mock<IInputSanitizer>();
             var searchAssistantMock = new Mock<ISearchAssistant>();
 
-            inputSanitizerMock.Setup(m => m.IsUrl(It.IsAny<string>())).Returns(false);
+            inputSanitizerMock.Setup(m => m.IsAbsoluteUrl(It.IsAny<string>())).Returns(false);
 
             var sut = new PageRanksController(searchAssistantMock.Object, inputSanitizerMock.Object);
 
@@ -45,7 +45,7 @@ namespace OnlineSearchAssistant.Tests.UnitTests.Controllers
             var inputSanitizerMock = new Mock<IInputSanitizer>();
             var searchAssistantMock = new Mock<ISearchAssistant>();
 
-            inputSanitizerMock.Setup(m => m.IsUrl(It.IsAny<string>())).Returns(true);
+            inputSanitizerMock.Setup(m => m.IsAbsoluteUrl(It.IsAny<string>())).Returns(true);
 
             var sut = new PageRanksController(searchAssistantMock.Object, inputSanitizerMock.Object);
 
@@ -60,7 +60,7 @@ namespace OnlineSearchAssistant.Tests.UnitTests.Controllers
             var inputSanitizerMock = new Mock<IInputSanitizer>();
             var searchAssistantMock = new Mock<ISearchAssistant>();
 
-            inputSanitizerMock.Setup(m => m.IsUrl(It.IsAny<string>())).Returns(false);
+            inputSanitizerMock.Setup(m => m.IsAbsoluteUrl(It.IsAny<string>())).Returns(false);
 
             var sut = new PageRanksController(searchAssistantMock.Object, inputSanitizerMock.Object);
 

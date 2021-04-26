@@ -4,14 +4,14 @@ namespace OnlineSearchAssistant.Application
 {
     public interface IInputSanitizer
     {
-        public bool IsUrl(string text);
+        public bool IsAbsoluteUrl(string text);
     }
 
     public class InputSanitizer : IInputSanitizer
     {
-        public bool IsUrl(string text)
+        public bool IsAbsoluteUrl(string text)
         {
-            return Uri.IsWellFormedUriString(text, UriKind.RelativeOrAbsolute);
+            return Uri.IsWellFormedUriString(text, UriKind.Absolute);
         }
     }
 }
